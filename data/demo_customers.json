@@ -1,0 +1,235 @@
+{
+  "today": "2026-11-20",
+  "edge_cases": {
+    "fraud_eligible": {
+      "what": "$480 unrecognized, 10d ago -> fraud, auto credit (P6)",
+      "customer_id": 1,
+      "name": "Grace Silva",
+      "last4": "8962",
+      "dob": "1990-04-20",
+      "zip": "87236",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 661,
+          "merchant": "LUXETECH ELECTRONICS HK",
+          "amount": "480.00",
+          "txn_date": "2026-11-10",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "fraud_over_limit": {
+      "what": "$700 unrecognized, 5d ago -> fraud, escalate credit (P6)",
+      "customer_id": 2,
+      "name": "Maya Chen",
+      "last4": "2403",
+      "dob": "1974-12-16",
+      "zip": "10851",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 662,
+          "merchant": "GLOBAL TRAVEL DEALS LTD",
+          "amount": "700.00",
+          "txn_date": "2026-11-15",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "merchant_non_delivery": {
+      "what": "$120 not delivered, 20d ago -> merchant, auto credit (P7)",
+      "customer_id": 3,
+      "name": "Ava Brown",
+      "last4": "4946",
+      "dob": "1964-04-28",
+      "zip": "65392",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 663,
+          "merchant": "Pinewood Furniture Co",
+          "amount": "120.00",
+          "txn_date": "2026-10-31",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "merchant_over_limit": {
+      "what": "$300 merchant issue, 15d ago -> escalate credit (P7)",
+      "customer_id": 4,
+      "name": "Elena Reyes",
+      "last4": "1949",
+      "dob": "1980-07-11",
+      "zip": "46421",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 664,
+          "merchant": "BrightStar Electronics",
+          "amount": "300.00",
+          "txn_date": "2026-11-05",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "duplicate_charge": {
+      "what": "$60 charged twice same day, 7d ago -> dispute the 2nd (P7)",
+      "customer_id": 5,
+      "name": "Lucas Patel",
+      "last4": "4923",
+      "dob": "1963-12-13",
+      "zip": "38221",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 665,
+          "merchant": "Bella Italia Restaurant",
+          "amount": "60.00",
+          "txn_date": "2026-11-13",
+          "status": "posted",
+          "already_disputed": false
+        },
+        {
+          "id": 666,
+          "merchant": "Bella Italia Restaurant",
+          "amount": "60.00",
+          "txn_date": "2026-11-13",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "date_window": {
+      "what": "59d old = eligible, 61d old = too late (P5)",
+      "customer_id": 6,
+      "name": "Sofia Johnson",
+      "last4": "6038",
+      "dob": "1980-03-13",
+      "zip": "23396",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 667,
+          "merchant": "Grand Hotel Downtown",
+          "amount": "150.00",
+          "txn_date": "2026-09-22",
+          "status": "posted",
+          "already_disputed": false
+        },
+        {
+          "id": 668,
+          "merchant": "Harbor View Spa",
+          "amount": "95.00",
+          "txn_date": "2026-09-20",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "pending_txn": {
+      "what": "pending transaction -> can't dispute yet (P5)",
+      "customer_id": 7,
+      "name": "Ethan Fischer",
+      "last4": "2832",
+      "dob": "1958-04-28",
+      "zip": "59797",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 669,
+          "merchant": "Lyft",
+          "amount": "45.30",
+          "txn_date": "2026-11-19",
+          "status": "pending",
+          "already_disputed": false
+        }
+      ]
+    },
+    "already_disputed": {
+      "what": "transaction already has a dispute -> no duplicate (P8)",
+      "customer_id": 8,
+      "name": "Noah Haddad",
+      "last4": "9005",
+      "dob": "1958-09-05",
+      "zip": "57052",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 670,
+          "merchant": "QuickShip Gadgets",
+          "amount": "89.99",
+          "txn_date": "2026-10-26",
+          "status": "posted",
+          "already_disputed": true
+        }
+      ]
+    },
+    "dispute_limit": {
+      "what": "3 disputes in last 90d; new one -> escalate (P8)",
+      "customer_id": 9,
+      "name": "Elena Chen",
+      "last4": "1009",
+      "dob": "1980-11-09",
+      "zip": "89131",
+      "card_status": "active",
+      "transactions": [
+        {
+          "id": 671,
+          "merchant": "SnapStyle Apparel",
+          "amount": "64.00",
+          "txn_date": "2026-09-06",
+          "status": "posted",
+          "already_disputed": true
+        },
+        {
+          "id": 672,
+          "merchant": "FitGear Direct",
+          "amount": "110.00",
+          "txn_date": "2026-10-06",
+          "status": "posted",
+          "already_disputed": true
+        },
+        {
+          "id": 673,
+          "merchant": "HomeChef Meal Kits",
+          "amount": "79.99",
+          "txn_date": "2026-10-31",
+          "status": "posted",
+          "already_disputed": true
+        },
+        {
+          "id": 674,
+          "merchant": "Urban Sneaker Co",
+          "amount": "75.00",
+          "txn_date": "2026-11-14",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    },
+    "frozen_card": {
+      "what": "card already frozen; $150 charge 3d ago (P6)",
+      "customer_id": 10,
+      "name": "Maya Brown",
+      "last4": "9689",
+      "dob": "1973-09-24",
+      "zip": "15695",
+      "card_status": "frozen",
+      "transactions": [
+        {
+          "id": 675,
+          "merchant": "Online Gaming Credits",
+          "amount": "150.00",
+          "txn_date": "2026-11-17",
+          "status": "posted",
+          "already_disputed": false
+        }
+      ]
+    }
+  }
+}
